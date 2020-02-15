@@ -1,2 +1,2 @@
-# robotic_tools_python
+# robotics_tools_python
 Robotics toolbox based on python
