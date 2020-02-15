@@ -7,8 +7,11 @@ import seaborn as seabornInstance
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn import metrics
+import os
 
-dataset = pd.read_csv('~/workspaces/data/Weather.csv')
+folder = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..', 'data'))
+
+dataset = pd.read_csv(folder+'/Weather.csv')
 #Explore the data
 print("dataset.shape:", dataset.shape)
 print("Statistical characteristics in the data:", dataset.describe())
