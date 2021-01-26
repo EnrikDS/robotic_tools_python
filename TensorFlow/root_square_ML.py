@@ -20,13 +20,13 @@ tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=logdir)
 
 'Lets build the data input'
 
-data_numbers = np.linspace(0, 100, 3000)
+data_numbers = np.linspace(100, 200, 3000)
 targets = np.sqrt(data_numbers)
-FIRST_LAYER_SIZE = 50
-SECOND_LAYER_SIZE = 50
+FIRST_LAYER_SIZE = 500
+SECOND_LAYER_SIZE = 200
 THIRD_LAYER_SIZE = 50
-LEARNING_RATE = 0.03
-EPOCHS =100
+LEARNING_RATE = 0.004
+EPOCHS =300
 #Define input layer (features)
 inputs = tf.keras.Input(shape=(1,), dtype=tf.float32)
 
@@ -44,7 +44,7 @@ dense3 = tf.keras.layers.Dense(THIRD_LAYER_SIZE, activation ='relu',
                                kernel_initializer=initial_weights)(dense2)
 
 #Output layer
-output = tf.keras.layers.Dense(1, activation='sigmoid',
+output = tf.keras.layers.Dense(1, activation='relu',
                                kernel_initializer=initial_weights)(dense3)
 
 #Define a functional model
